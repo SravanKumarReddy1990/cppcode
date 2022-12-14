@@ -1,14 +1,14 @@
 #include <iostream>
 using namespace std;
 #include <string.h>  
-class Car
+class Data
 {
     private:
-        Car(){};
+        Data(){};
         string key;
         string value;
     public:
-        Car(string key,string value)
+        Data(string key,string value)
         {
           this->key=key;
           this->value=value;
@@ -24,29 +24,21 @@ class Car
         }
 };
 
-void printCarNumbers(Car *cars, int length)
-{
-    for(int i = 0; i < length; i++)
-        cars[i].printNo();
-}
+
 
 
 
 int main()
 {
 
-string a[15]={"Sravan","Sravan","Sravan","Sravan","ramu","Ravi","Ravi","Ravi","ramu","ramu","ramu","ramu","Rama","Rama","Jagan"};
+string a[18]={"Sravan","Sravan","Sravan","Sravan","Sravan","ramu","Ravi","Ravi","Ravi","ramu","ramu","ramu","ramu","Rama","Rama","Rama","Jagan","Jagan"};
 int al = sizeof(a)/sizeof(a[0]); 
-std::cout << al<< std::endl;
+std::cout << al << std::endl;
   int userInput = 10;
 
-  Car *mycars;
-   mycars= (Car*) ::operator new (sizeof(Car)*userInput);
+  Data *data;
+   data= (Data*) ::operator new (sizeof(Data)*userInput);
 
-  //for(int i =0;i < userInput;i++)
-   // new (&mycars[i]) Car("hi","hi");
-
- // printCarNumbers(mycars,userInput);
   int m = 0;
         for (int i = 0; i < al; i++) {
 
@@ -55,7 +47,7 @@ std::cout << al<< std::endl;
                 try {
                     // System.out.println(repeated[i][j]);
                     // if (repeated[l][0].equals(a[i])) {
-                    if (mycars[l].getKey().compare(a[i])==0) {
+                    if (data[l].getKey().compare(a[i])==0) {
                         contains = true;
                     }
                 } catch (const char* e) {
@@ -81,7 +73,7 @@ std::cout << al<< std::endl;
                 }
                 //std::cout << a[i]<< std::endl;
                 //std::cout << n<< std::endl;
-                 new (&mycars[m]) Car(a[i],strnum);
+                 new (&data[m]) Data(a[i],strnum);
                 m++;
             }
         }
@@ -95,8 +87,8 @@ std::cout << al<< std::endl;
             // System.out.println("");
            // for (int j = 0; j < 2; j++) {
             //    if (null != da.getElement(i, j, 0)) {
-                    std::cout << mycars[i].getKey() << std::endl;
-                    std::cout << mycars[i].getValue() << std::endl;
+                    std::cout << data[i].getKey() << std::endl;
+                    std::cout << data[i].getValue() << std::endl;
                     //if(Integer.parseInt(da.getElement(i, 1, 0)) >value) {
                     //    value =Integer.parseInt(da.getElement(i, 1, 0));
                     //    name=da.getElement(i, 0, 0);
